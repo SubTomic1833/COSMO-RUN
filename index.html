@@ -24,6 +24,7 @@
                 display:block;
                 margin:0 auto;
                 background:#111;
+                border: 3px solid #00ffcc;
             }
             #message{
                 position:absolute;
@@ -138,7 +139,7 @@
                 for(let obs of obstacles){
                     drawTriangle(obs);
                 }
-                ctx.font = "16px Arial";
+                ctx.font = "600 16px Inter, sans-serif";
                 ctx.fillStyle = "white";
                 ctx.fillText("Score: " + score, 10, 20);
                 ctx.fillText("Level: " + level, 10, 40);
