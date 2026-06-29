@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
         <meta charset="UTF-8">
         <title>DASH</title>
         <style>
@@ -8,7 +11,7 @@
                 margin: 0;
                 background: #0f0f0f;
                 overflow: hidden;
-                font-family: Arial, sans-serif;
+                font-family: 'inter', sans-serif;
                 color: white;
 
                 display: flex;
@@ -24,9 +27,12 @@
             }
             #message{
                 position:absolute;
-                width:100%;
-                top:40%;
+                left: 50%;
+                top:50%;
+                transform:translate(-50%, -50%);
                 font-size:28px;
+                text-align:center;
+                pointer-events:none;
             }
         </style>
     </head>
