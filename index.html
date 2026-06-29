@@ -92,7 +92,11 @@
 
                 for(let i = 0; i < obstacles.length; i++){
                     obstacles[i].x -= 5;
-                    if(player.x < obstacles[i].x + obstacles[i].width && player.x + player.size > obstacles[i].x && player.y > groundY - obstacles[i].height - player.size){
+                    const obsTop = groundY - obstacles[i].height;
+                    const safeZone = obsTop + obstacles[i].height * 0.75;
+
+                    if (player.x < obstacles[i].x + obstacles[i].width && player.x + player.size > obstacles[i].x && player.y > safeZone - player.size)
+                    {
                         endGame();
                     }
                 }
