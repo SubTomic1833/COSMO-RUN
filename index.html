@@ -192,10 +192,9 @@
                 }
                 obstacles = obstacles.filter(o => o.x > -50);
 
-                backgroundOffset -= speed *0.4;
-                if(backgroundOffset <= -40){
-                    backgroundOffset = 0;
-                }
+                
+                const gridSize = 40;
+                backgroundOffset = (backgroundOffset - speed * 0.4)%gridSize;
 
                 frameCount++;
                 if(frameCount % 90 === 0){
@@ -234,7 +233,7 @@
                 ctx.strokeStyle ="rgba(0,255,204,0.15)";
                 ctx.lineWidth = 2;
 
-                for(let x = backgroundOffset; x <= canvas.width; x += gridSize * 4){
+                for(let x = -gridSize *4 + backgroundOffset; x <= canvas.width; x += gridSize * 4){
                     for(let y=0; y <= groundY; y += gridSize *4){
                         ctx.strokeRect(
                             x,
