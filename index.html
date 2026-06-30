@@ -261,12 +261,12 @@
                     }
                     if(o.type === "block"){
                         const blockTop = groundY - o.height;
-                        const prevBottom = (py - player.velocityY) + ps;
-                        const currBottom = py + ps;
+                        const prevFootY = py - player.velocityY;
+                        const currFootY = py;
                         const isFalling = player.velocityY >= 0;
 
-                        const wasAbove = prevBottom <= blockTop;
-                        const nowAtOrBelow = currBottom >= blockTop;
+                        const wasAbove = prevFootY <= blockTop;
+                        const nowAtOrBelow = currFootY >= blockTop;
 
                         if(wasAbove && nowAtOrBelow && isFalling){
                             player.y = blockTop;
